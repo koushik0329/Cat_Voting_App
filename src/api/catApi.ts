@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
-// const API_KEY ="live_qtJYZQ1Bi2hiQ1mhYN5YYXBDDvMJiBW91C6FIz6SFpjtEymlOOiBbSTnkWN9S7Ej";
 
 const API_URL = "https://api.thecatapi.com/v1";
 
