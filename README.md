@@ -1,69 +1,96 @@
-# React + TypeScript + Vite
+# 🐱 Cat Voting App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple, single-page React application that allows users to browse random cat images and cast an "Up" or "Down" vote for each one. Votes are persisted via [TheCatAPI](https://thecatapi.com/). Built using React 18, TypeScript, Vite, Zustand, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## 🛠️ Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React 18** with TypeScript
+- **Vite** for fast builds and dev server
+- **Tailwind CSS** for styling
+- **Zustand** for state management
+- **Axios** for API requests
+- **React Toastify** for notifications
 
-## Expanding the ESLint configuration
+## 📁 Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+cat-voting-app/
+├── public/
+├── src/
+│ ├── components/
+│ ├── api/
+│ ├── store/
+│ ├── App.tsx
+│ └── main.tsx
+├── .env
+├── tailwind.config.js
+├── postcss.config.js
+├── vite.config.ts
+├── package.json
+└── tsconfig.json
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🔐 Environment Variables
+
+Create a `.env` file in the root of the project with the following:
+
+```env
+VITE_API_KEY=your_thecatapi_key_here
+```
+
+> ⚠️ Do not commit your `.env` file to version control.
+
+## 🧪 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/cat-voting-app.git
+cd cat-voting-app
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Create a `.env` file
+
+```bash
+touch .env
+```
+
+Add your TheCatAPI key:
+
+```env
+VITE_API_KEY=your_thecatapi_key_here
+```
+
+### 4. Run the development server
+
+```bash
+npm run dev
+```
+
+The app will be available at [http://localhost:5173](http://localhost:5173)
+
+## 🚀 Build for Production
+
+```bash
+npm run build
+```
+
+## ✅ Lint the Code
+
+```bash
+npm run lint
+```
+
+## 📦 Preview Production Build
+
+```bash
+npm run preview
 ```
