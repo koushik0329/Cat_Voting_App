@@ -7,7 +7,7 @@ const API_URL = "https://api.thecatapi.com/v1";
 const api = axios.create({
   baseURL: API_URL,
   headers: {
-    "x-api-key": API_KEY,
+    "X-API-Key": API_KEY,
   },
 });
 
